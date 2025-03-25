@@ -6,9 +6,10 @@ stages {
           git 'https://github.com/BAliani/my-python-project.git'
          }
   }
-stage('Build') { 
+stage('Flake8') { 
 steps { 
-echo 'Building...' 
+ echo 'Executing Flake8.' 
+ sh 'python3 --version'
 } 
 } 
 stage('Test') { 
