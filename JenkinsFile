@@ -8,7 +8,7 @@ stages {
   }
 stage('Flake8') { 
 steps { 
- echo 'Executing Flake8.' 
+ echo 'Executing flake8 ...' 
  sh 'python3 --version'
  sh 'python3 -m flake8 --version'
  sh 'python3 -m flake8 . --count --show-source --statistics || true'
@@ -16,7 +16,8 @@ steps {
 } 
 stage('Test') { 
 steps { 
-echo 'Testing...' 
+echo 'Executing pytest ...' 
+sh 'pytest | tee report.txt'
 } 
 } 
 stage('Deploy') { 
