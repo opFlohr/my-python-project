@@ -15,12 +15,7 @@ pipeline {
             }
         }
 
-    //    stage('Checkout Code') {
-     //       steps {
-       //         git 'https://github.com/BAliani/my-python-project.git'  // Remplace par ton repo
-         //   }
-        //}
-
+  
         stage('Static Code Analysis (Flake8)') {
             parallel {
                 stage('Flake8 Linting') {
@@ -41,8 +36,6 @@ pipeline {
                     steps {
                         script {
                             try {
-                                //sh 'pip install -r requirements.txt'
-                                //sh 'pip install pytest'
                                 sh 'pytest | tee report.txt'
                             } catch (Exception e) {
                                 echo "Les tests unitaires ont échoué!"
