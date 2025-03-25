@@ -9,6 +9,8 @@ stages {
            git branch: 'main', url: 'https://github.com/opFlohr/my-python-project.git'
          }
   }
+  stage ('Flake8 and Testing')
+  {
 parallel { 
 stage('Flake8') { 
 steps { 
@@ -24,6 +26,7 @@ echo 'Executing pytest ...'
 sh 'pytest | tee report.txt'
 } 
 } 
+}
 }
 stage('Deploy') { 
   steps { 
