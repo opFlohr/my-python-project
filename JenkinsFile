@@ -6,6 +6,7 @@ stages {
  steps {
  git 'https://github.com/BAliani/my-python-project.git’
  }
+}
 stage('Build') { 
 steps { 
 echo 'Building...' 
