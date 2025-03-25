@@ -10,6 +10,7 @@ stage('Flake8') {
 steps { 
  echo 'Executing Flake8.' 
  sh 'python3 --version'
+ sh 'python3 -m flake8 --version'
 } 
 } 
 stage('Test') { 
