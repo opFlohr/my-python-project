@@ -30,13 +30,13 @@ stage('Deploy') {
   { 
     sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin' 
   } 
-  # Construire l'image Docker avec le BUILD_NUMBER de Jenkins
+  // Construire l'image Docker avec le BUILD_NUMBER de Jenkins
   sh 'docker build -t opflohr/my-python-app:$BUILD_NUMBER .'
 
-  # Se connecter à Docker Hub en utilisant le token d'accès 
+  // Se connecter à Docker Hub en utilisant le token d'accès 
   sh 'docker login -u $DOCKER_LOGIN -p $DOCKER_PASS'
 
-  # Pousser l'image sur Docker Hub
+  // Pousser l'image sur Docker Hub
   sh 'docker push opflohr/my-python-app:$BUILD_NUMBER'
   
   } 
