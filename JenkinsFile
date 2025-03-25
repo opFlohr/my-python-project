@@ -3,7 +3,7 @@ agent any
 stages { 
   stage('Checkout') {
     steps {
-          git 'https://github.com/BAliani/my-python-project.git'
+          git 'https://github.com/opFlohr/my-python-project.git'
          }
   }
 stage('Flake8') { 
